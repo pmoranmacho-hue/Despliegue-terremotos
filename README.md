@@ -104,6 +104,3 @@ Desplegado en [Render](https://render.com) como Web Service, conectado a la rama
 - `main`: código en producción, solo recibe merges vía Pull Request.
 - `develop`: integración de funcionalidades antes de pasar a producción.
 - `feature/*`: una funcionalidad nueva por rama, con PR hacia `develop` (o `main` para el redespliegue en directo).
-  
-- `develop`: integración de funcionalidades antes de pasar a producción.
-- `feature/*`: una funcionalidad nueva por rama, con PR hacia `develop` (o `main` para el redespliegue en directo).
