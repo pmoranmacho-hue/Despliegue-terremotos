@@ -110,8 +110,8 @@ def predict():
 # Añade al resultado del modelo una clasificación de riesgo legible
 # (bajo / medio / alto) en vez de solo la probabilidad en crudo.
 # ------------------------------------------------------------------
- def clasificar_riesgo(probabilidad):
-   if probabilidad < 0.33:
+def clasificar_riesgo(probabilidad):
+    if probabilidad < 0.33:
         return "bajo"
     elif probabilidad < 0.66:
         return "medio"
@@ -125,16 +125,16 @@ def predict_riesgo():
     else:
         data = request.get_json(silent=True)
     datos_limpios, error = validar_input(data)
-   if error:
+    if error:
         return jsonify({"error": error}), 400
 
     try:
          resultado = predecir_severidad(**datos_limpios)
-     except Exception as e:
+    except Exception as e:
          return jsonify({"error": f"No se ha podido generar la predicción: {e}"}), 500
 
-     resultado["nivel_riesgo"] = clasificar_riesgo(resultado["probabilidad_severo"])
-return jsonify(resultado), 200
+    resultado["nivel_riesgo"] = clasificar_riesgo(resultado["probabilidad_severo"])
+    return jsonify(resultado), 200
 
 
 if __name__ == "__main__":
