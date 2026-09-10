@@ -134,7 +134,7 @@ def predict_riesgo():
          return jsonify({"error": f"No se ha podido generar la predicción: {e}"}), 500
 
      resultado["nivel_riesgo"] = clasificar_riesgo(resultado["probabilidad_severo"])
-     return jsonify(resultado), 200
+return jsonify(resultado), 200
 
 
 if __name__ == "__main__":
