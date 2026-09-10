@@ -115,7 +115,7 @@ def predict():
         return "bajo"
     elif probabilidad < 0.66:
         return "medio"
-        else:
+    else:
         return "alto"
 
 @app.route("/predict/riesgo", methods=["GET", "POST"])
